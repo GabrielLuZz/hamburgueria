@@ -14,6 +14,7 @@ const ProductsList = ({ products, filteredProducts, addToCart }) => {
             price={price}
             img={img}
             addToCart={addToCart}
+            id={id}
           />
         ))
       ) : filteredProducts[0] === "sem resultado" ? (
