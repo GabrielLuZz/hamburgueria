@@ -6,7 +6,6 @@ const CartProduct = ({
   img,
   quantity,
   id,
-  price,
   removeFromCart,
   decreaseInCart,
   increaseInCart,
