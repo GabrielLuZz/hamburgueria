@@ -9,6 +9,7 @@ const InputSearch = ({ showProducts, fieldValue, setFieldValue }) => {
           setFieldValue(e.target.value);
         }}
         type="text"
+        value={fieldValue}
       />
       <Button showProducts={showProducts} fieldValue={fieldValue}>
         Pesquisar
