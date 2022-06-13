@@ -11,6 +11,7 @@ function App() {
   const [currentSale, setCurrentSale] = useState([]);
   const [fieldValue, setFieldValue] = useState("");
   const [clicked, setClicked] = useState(false);
+  const [currentField, setCurrentField] = useState("");
 
   useEffect(() => {
     fetch("https://hamburgueria-kenzie-json-serve.herokuapp.com/products")
@@ -25,6 +26,8 @@ function App() {
         name.toLowerCase().includes(value.toLowerCase()) ||
         category.toLowerCase().includes(value.toLowerCase())
     );
+
+    setCurrentField(value);
 
     if (value) {
       setClicked(true);
@@ -85,10 +88,10 @@ function App() {
         setFieldValue={setFieldValue}
       />
       <C.Main>
-        {clicked && fieldValue.length !== 0 && (
+        {clicked && currentField.length !== 0 && (
           <C.Container>
             <h2 className="result">
-              Resultados para: <span>{fieldValue}</span>
+              Resultados para: <span>{currentField}</span>
             </h2>
           </C.Container>
         )}
